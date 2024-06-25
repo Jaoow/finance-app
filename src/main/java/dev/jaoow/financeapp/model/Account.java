@@ -1,8 +1,5 @@
-// src/main/java/com/financeapp/model/Account.java
-
 package dev.jaoow.financeapp.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
