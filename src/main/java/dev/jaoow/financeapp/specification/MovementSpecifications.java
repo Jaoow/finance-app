@@ -1,6 +1,6 @@
 package dev.jaoow.financeapp.specification;
 
-import dev.jaoow.financeapp.model.Movement;
+import dev.jaoow.financeapp.entity.Movement;
 import dev.jaoow.financeapp.model.MovementType;
 import org.springframework.data.jpa.domain.Specification;
 
@@ -34,5 +34,10 @@ public class MovementSpecifications {
                 return criteriaBuilder.lessThanOrEqualTo(root.get("date"), endDate);
             }
         };
+    }
+
+    public static Specification<Movement> hasAccount(Long accountId) {
+        return (root, query, criteriaBuilder) ->
+                accountId == null ? null : criteriaBuilder.equal(root.get("account").get("id"), accountId);
     }
 }

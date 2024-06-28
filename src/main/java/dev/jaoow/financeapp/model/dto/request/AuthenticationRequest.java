@@ -1,11 +1,9 @@
-package dev.jaoow.financeapp.dto;
+package dev.jaoow.financeapp.model.dto.request;
 
 import lombok.Data;
 
-import java.util.List;
-
 @Data
-public class UserDTO {
+public class AuthenticationRequest {
     private String email;
     private String password;
 }

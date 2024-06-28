@@ -1,5 +1,6 @@
-package dev.jaoow.financeapp.model;
+package dev.jaoow.financeapp.entity;
 
+import dev.jaoow.financeapp.model.MovementType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,7 +28,7 @@ public class Movement {
     private LocalDate date;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id")
     private Category category;
 
     @ManyToOne

@@ -1,12 +1,13 @@
-package dev.jaoow.financeapp.model;
+package dev.jaoow.financeapp.entity;
 
+import dev.jaoow.financeapp.model.MovementType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -25,7 +26,11 @@ public class Account {
     private BigDecimal initialBalance;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Movement> movements = new ArrayList<>();
+    private List<Movement> movements = new LinkedList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public BigDecimal getCurrentBalance() {
         BigDecimal totalIncome = movements.stream()

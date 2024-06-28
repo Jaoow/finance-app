@@ -1,6 +1,6 @@
 package dev.jaoow.financeapp.service;
 
-import dev.jaoow.financeapp.model.User;
+import dev.jaoow.financeapp.entity.User;
 import dev.jaoow.financeapp.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
